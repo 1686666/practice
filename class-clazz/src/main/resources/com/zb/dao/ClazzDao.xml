@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.dao.ClazzDao">
+    <select id="queryAll" resultType="com.zb.entity.Clazz">
+        select * from clazz
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert  into clazz values (#{id},#{name},#{path},#{tagid})
+    </insert>
+
+    <delete id="delete">
+        delete from clazz where  id=#{id}
+    </delete>
+
+    <select id="byone" resultType="com.zb.entity.Clazz">
+        select * from clazz where id=#{id}
+    </select>
+</mapper>

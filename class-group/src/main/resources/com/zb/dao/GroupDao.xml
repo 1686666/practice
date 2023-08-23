@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.dao.GroupDao">
+    <select id="quertAll" resultType="com.zb.entity.Group">
+        select * from groupss
+    </select>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into groupss(name,createDate,clazzId) values(#{name},#{createDate},#{clazzId})
+    </insert>
+    <select id="byId" resultType="com.zb.entity.Group">
+        select * from groupss where  id=#{id}
+    </select>
+</mapper>
